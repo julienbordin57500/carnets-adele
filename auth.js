@@ -1,11 +1,10 @@
-// Connexion par profil + mot de passe : 2 comptes, « Parents » et « Grands-parents »
+// Connexion par mot de passe : un seul compte, « Parents » (pas d'espace grands-parents dans le carnet d'Adèle)
 // Les droits sont vérifiés par le serveur (règles RLS) : l'écran ne fait que guider.
 
 const PROFILS = [
   { nom: "Parents", emoji: "👨‍👩‍👧", role: "parents" },
-  { nom: "Grands-parents", emoji: "👵", role: "famille" },
 ];
-const COMPTES = { parents: "parents.adele@example.com", famille: "grandsparents.adele@example.com" };
+const COMPTES = { parents: "parents.adele@example.com" };
 
 // Profil connecté sur ce téléphone : { nom, emoji, role }
 let profil = null;
@@ -21,7 +20,7 @@ const connexionPrete = new Promise((r) => (resoudreConnexion = r));
   const sb = CONFIG.demo ? null : window.supabase?.createClient(SUPABASE_URL, SUPABASE_KEY, {
     auth: { persistSession: true, autoRefreshToken: true, storageKey: "adele:auth" },
   });
-  let choix = lire("dernier-profil", null, (v) => PROFILS.some((p) => p.nom === v));
+  let choix = lire("dernier-profil", "Parents", (v) => PROFILS.some((p) => p.nom === v));
 
   obtenirJeton = async () => {
     if (!sb) return null;

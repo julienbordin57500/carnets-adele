@@ -1576,10 +1576,10 @@ html:root.nuit-douce .lucioles { display: block; }
 .td-gros.td-couche { background: var(--couche); color: #fff; box-shadow: 0 4px 0 color-mix(in srgb, var(--couche) 60%, #000); }
 @keyframes td-presse { 0%, 48%, 70%, 100% { transform: translateY(0); } 55% { transform: translateY(3px); } }
 /* 1. Onglets : un curseur passe de l'un à l'autre */
-.td-onglets { position: relative; display: grid; grid-template-columns: repeat(5, 40px); gap: 6px; font-size: 1.5rem; text-align: center; }
+.td-onglets { position: relative; display: grid; grid-template-columns: repeat(4, 40px); gap: 6px; font-size: 1.5rem; text-align: center; }
 .td-onglets span { position: relative; z-index: 1; line-height: 40px; }
 .td-curseur { position: absolute; left: 0; top: 0; width: 40px; height: 40px; border-radius: 12px; background: var(--accent); opacity: .35; animation: td-curseur 6s ease-in-out infinite; }
-@keyframes td-curseur { 0%, 14% { transform: translateX(0); } 20%, 34% { transform: translateX(46px); } 40%, 54% { transform: translateX(92px); } 60%, 74% { transform: translateX(138px); } 80%, 94% { transform: translateX(184px); } 100% { transform: translateX(0); } }
+@keyframes td-curseur { 0%, 18% { transform: translateX(0); } 25%, 43% { transform: translateX(46px); } 50%, 68% { transform: translateX(92px); } 75%, 93% { transform: translateX(138px); } 100% { transform: translateX(0); } }
 /* 2. Repas : 110 → 120 ml */
 .td-ml { display: flex; align-items: center; gap: 12px; }
 .td-rond { position: relative; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--card); border: 2px solid var(--card-border); font-size: 1.2rem; }

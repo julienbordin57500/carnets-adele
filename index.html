@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body class="verrouille">
   <!-- Accueil / connexion : on choisit son profil puis on tape le mot de passe donné par les parents -->
@@ -61,7 +61,7 @@
     </form>
   </div>
 
-  <!-- Petit tuto animé (parents et grands-parents, première connexion) -->
+  <!-- Petit tuto animé (parents, première connexion) -->
   <dialog class="sheet tuto" id="tuto" aria-labelledby="tuto-titre">
     <form method="dialog" class="tuto-box">
       <div class="tuto-emoji" id="tuto-emoji" aria-hidden="true">👋</div>
@@ -329,7 +329,6 @@
       <button type="button" class="tab" role="tab" data-page="1"><span class="tab-emoji" aria-hidden="true">👶</span><span>Couches</span></button>
       <button type="button" class="tab" role="tab" data-page="2"><span class="tab-emoji" aria-hidden="true">🌙</span><span>Sommeil</span></button>
       <button type="button" class="tab" role="tab" data-page="3"><span class="tab-emoji" aria-hidden="true">🩺</span><span>Santé</span></button>
-      <button type="button" class="tab" role="tab" data-page="4"><span class="tab-emoji" aria-hidden="true">👵</span><span>Garde</span></button>
     </nav>
 
     <div class="pages" id="pages">
@@ -681,93 +680,6 @@
         </section>
       </div>
 
-      <!-- ================= GARDE (grands-parents) ================= -->
-      <div class="page" id="page-garde" role="tabpanel" aria-label="Garde">
-        <section class="card whoami" id="g-whoami">
-          <div class="who-set">
-            <span class="who-name" id="g-who-name"></span>
-          </div>
-        </section>
-
-        <!-- Noter maintenant : 3 gros boutons pour la famille (un appui = c'est noté) -->
-        <section class="card g-actions" id="g-actions" hidden>
-          <button type="button" class="g-reveil" id="g-reveil" hidden>
-            <span class="g-reveil-haut" id="g-reveil-depuis">😴 Adèle dort depuis 25 min</span>
-            <span class="g-reveil-bas">☀️ Toucher ici quand elle se réveille</span>
-          </button>
-          <div class="g-tuiles" id="g-tuiles">
-            <button type="button" class="g-tuile" id="g-t-biberon">
-              <span class="g-tuile-emoji" aria-hidden="true">🍼</span>
-              <span class="g-tuile-nom">Biberon</span>
-              <span class="g-tuile-sous">combien de ml ?</span>
-            </button>
-            <button type="button" class="g-tuile" id="g-t-couche">
-              <span class="g-tuile-emoji" aria-hidden="true">👶</span>
-              <span class="g-tuile-nom">Couche</span>
-              <span class="g-tuile-sous">pipi ou caca</span>
-            </button>
-            <button type="button" class="g-tuile" id="g-t-dodo">
-              <span class="g-tuile-emoji" aria-hidden="true" id="g-t-dodo-emoji">🌙</span>
-              <span class="g-tuile-nom" id="g-t-dodo-nom">Elle s'endort</span>
-              <span class="g-tuile-sous" id="g-t-dodo-sous">dodo</span>
-            </button>
-          </div>
-          <p class="g-alerte-dodo" id="g-alerte-dodo" hidden></p>
-          <div class="g-liens">
-            <button type="button" class="g-oubli-lien" id="g-mot">📝 Un mot pour les parents</button>
-            <button type="button" class="g-oubli-lien" id="g-oubli-lien">🕓 J'ai oublié de noter</button>
-          </div>
-        </section>
-
-        <section class="card garde-day">
-          <div class="day-nav">
-            <button type="button" class="day-arrow" id="g-prev" aria-label="Jour précédent">‹</button>
-            <div class="day-title">
-              <p class="day-name" id="g-day-name">Aujourd'hui</p>
-              <p class="day-date" id="g-day-date"></p>
-            </div>
-            <button type="button" class="day-arrow" id="g-next" aria-label="Jour suivant">›</button>
-          </div>
-          <p class="garde-by" id="g-by"></p>
-          <p class="g-vu" id="g-vu" hidden></p>
-          <button type="button" class="g-reactions" id="g-reactions" hidden aria-live="polite"></button>
-          <ul class="notes" id="g-notes"></ul>
-
-
-
-          <div class="g-row">
-            <div class="g-head"><span class="g-emoji" aria-hidden="true">🍼</span><span class="g-title">Repas</span><span class="g-sum" id="g-repas-sum"></span></div>
-            <div class="pills" id="g-repas-list"></div>
-          </div>
-          <div class="g-row">
-            <div class="g-head"><span class="g-emoji" aria-hidden="true">👶</span><span class="g-title">Couches</span><span class="g-sum" id="g-couche-sum"></span></div>
-            <div class="pills" id="g-couche-list"></div>
-          </div>
-          <div class="g-row">
-            <div class="g-head"><span class="g-emoji" aria-hidden="true">😴</span><span class="g-title">Sommeil</span><span class="g-sum" id="g-sleep-sum"></span></div>
-            <div class="pills" id="g-sleep-list"></div>
-          </div>
-          <p class="hint" id="g-modif-hint" hidden>✏️ Une erreur ? Touche la ligne pour changer l'heure ou l'effacer.</p>
-          <p class="hint small" id="g-read-hint">👀 Mode consultation.</p>
-          <p class="hint small" id="g-tuto-box" hidden><button type="button" class="link" id="g-tuto">💡 Revoir le petit tuto</button></p>
-        </section>
-
-        <!-- Résumé pour les grands-parents : l'essentiel noté par tout le monde, sans le détail -->
-        <section class="card resume-maison" id="g-resume" hidden>
-          <div class="resume-tete">
-            <p class="resume-titre"><span aria-hidden="true">🏠</span> Les dernières nouvelles</p>
-            <span class="resume-maj" id="g-resume-maj"></span>
-          </div>
-          <div class="resume-grille" id="g-resume-liste" aria-live="polite"></div>
-        </section>
-
-        <!-- Petite fenêtre à tout faire de la garde (couche, quantité, oubli, modifier une ligne) -->
-        <dialog class="sheet g-feuille" id="g-feuille" aria-labelledby="g-feuille-titre">
-          <p class="sheet-title" id="g-feuille-titre"></p>
-          <div class="g-feuille-corps" id="g-feuille-corps"></div>
-          <button type="button" class="link g-feuille-fermer" id="g-feuille-fermer">Annuler</button>
-        </dialog>
-      </div>
     </div>
 
     <p class="error" id="error" role="alert" hidden></p>
@@ -820,7 +732,7 @@
     <form method="dialog">
       <p class="sheet-title" id="reglages-titre">⚙️ Réglages</p>
       <div class="reglages-liste">
-        <button type="button" class="who-btn" id="comptes-ouvrir" hidden><span class="emoji" aria-hidden="true">🔐</span><span>Gérer les comptes</span></button>
+        <button type="button" class="who-btn" id="comptes-ouvrir" hidden><span class="emoji" aria-hidden="true">🔐</span><span>Mot de passe</span></button>
         <button type="button" class="who-btn" id="demo-ouvrir" hidden><span class="emoji" aria-hidden="true">🧸</span><span>Mode découverte</span></button>
         <button type="button" class="who-btn" id="tuto-revoir"><span class="emoji" aria-hidden="true">📖</span><span>Revoir le tuto</span></button>
         <button type="button" class="who-btn" id="moi-changer"><span class="emoji" aria-hidden="true">↩️</span><span>Changer de profil</span></button>
@@ -831,20 +743,15 @@
     </form>
   </dialog>
 
-  <!-- Gérer les comptes (parents) : 1 compte Parents, 1 compte Grands-parents -->
+  <!-- Gérer le compte (parents) : changer le mot de passe -->
   <dialog class="sheet" id="comptes" aria-labelledby="comptes-titre">
     <form method="dialog" id="comptes-form">
       <p class="sheet-title" id="comptes-titre">🔐 Les comptes</p>
-      <p class="hint">Deux comptes seulement : chacun a son mot de passe, à donner à la bonne personne.</p>
+      <p class="hint">Un seul compte, celui des parents : le même mot de passe sur vos deux téléphones.</p>
       <div class="compte-ligne">
         <span class="compte-nom">👨‍👩‍👧 Parents</span>
         <span class="compte-droits">Accès à tout</span>
         <button type="button" class="g-btn" data-compte="parents">Changer le mot de passe</button>
-      </div>
-      <div class="compte-ligne">
-        <span class="compte-nom">👵 Grands-parents</span>
-        <span class="compte-droits">Garde et Santé seulement</span>
-        <button type="button" class="g-btn alt" data-compte="famille">Changer le mot de passe</button>
       </div>
       <div class="compte-mdp" id="compte-mdp" hidden>
         <p class="label" id="compte-mdp-titre"></p>
@@ -969,25 +876,23 @@
   </dialog>
 
 
-  <script src="scene.js?v=1"></script>
+  <script src="scene.js?v=2"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
-  <script src="config.js?v=1"></script>
-  <script src="commun.js?v=1"></script>
-  <script src="demo.js?v=1"></script>
-  <script src="auth.js?v=1"></script>
-  <script src="repas.js?v=1"></script>
-  <script src="couches.js?v=1"></script>
-  <script src="sommeil.js?v=1"></script>
-  <script src="sante.js?v=1"></script>
-  <script src="medicaments.js?v=1"></script>
-  <script src="resume.js?v=1"></script>
-  <script src="sons.js?v=1"></script>
-  <script src="garde.js?v=1"></script>
-  <script src="graphiques.js?v=1"></script>
-  <script src="fetes.js?v=1"></script>
-  <script src="notifs.js?v=1"></script>
-  <script src="comptes.js?v=1"></script>
-  <script src="tuto.js?v=1"></script>
-  <script src="pages.js?v=1"></script>
+  <script src="config.js?v=2"></script>
+  <script src="commun.js?v=2"></script>
+  <script src="demo.js?v=2"></script>
+  <script src="auth.js?v=2"></script>
+  <script src="repas.js?v=2"></script>
+  <script src="couches.js?v=2"></script>
+  <script src="sommeil.js?v=2"></script>
+  <script src="sante.js?v=2"></script>
+  <script src="medicaments.js?v=2"></script>
+  <script src="sons.js?v=2"></script>
+  <script src="graphiques.js?v=2"></script>
+  <script src="fetes.js?v=2"></script>
+  <script src="notifs.js?v=2"></script>
+  <script src="comptes.js?v=2"></script>
+  <script src="tuto.js?v=2"></script>
+  <script src="pages.js?v=2"></script>
 </body>
 </html>

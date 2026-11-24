@@ -1,4 +1,4 @@
-// 🔐 Page « comptes » (parents) : changer le mot de passe du compte Parents ou du compte Grands-parents
+// 🔐 Page « comptes » (parents) : changer le mot de passe du compte Parents
 (() => {
   let compteChoisi = null;
   const NOMS = { parents: "👨‍👩‍👧 Parents", famille: "👵 Grands-parents" };

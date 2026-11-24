@@ -4,13 +4,13 @@
 > Base Supabase « Carnets-Adele » (`tklffguxxoubfyrxsupd`) hébergée pour l'instant dans l'organisation
 > « Clairette » (compte de Claire) ; à transférer plus tard vers un compte de la famille d'Adèle
 > (Project Settings → Transfer project, après les avoir invités / avoir été invité dans leur organisation).
-> Comptes : parents.adele@example.com et grandsparents.adele@example.com (mots de passe choisis par Julien).
-> Tuto animé pour les parents ET les grands-parents (`tuto.js`), revoyable depuis ⚙️ Réglages.
+> **Parents seulement** : pas de profil grands-parents ni d'onglet Garde (retirés à la demande de Julien,
+> `garde.js` et `resume.js` supprimés). Un seul compte : parents.adele@example.com.
+> Les tables garde_* restent dans la base (vides, sans effet). Tuto animé des parents (`tuto.js`), revoyable depuis ⚙️ Réglages.
 > Installation complète de la base : `supabase/installation_complete.sql` (déjà appliquée).
 
 Appli web (PWA) pour Adèle : repas, couches, sommeil, santé, garde. Copie adaptée du carnet de Noah
-(`../biberons-noah`), thème « oursons et hortensias ». Deux profils : Parents (tout) et Grands-parents
-(Garde et Santé), droits vérifiés par le serveur. Toujours répondre en français, à un utilisateur novice.
+(`../biberons-noah`), thème « oursons et hortensias ». Un seul profil : Parents, droits vérifiés par le serveur. Toujours répondre en français, à un utilisateur novice.
 
 ## Techno
 - Site statique : HTML + CSS + JavaScript « à la main ». Pas de npm, pas de build, pas de framework.
